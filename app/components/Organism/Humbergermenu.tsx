@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { Menu, X } from "lucide-react"; // アイコン追加（lucide-react）
+import { Menu, X } from "lucide-react";
 import Link from "../atom/Link";
 
 const Humbergermenu = () => {
