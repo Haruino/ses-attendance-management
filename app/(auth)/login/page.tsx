@@ -1,7 +1,7 @@
-import { CardTitle } from "@/app/components/atom/CardTitle";
-import { Card } from "@/app/components/Molecules/Card";
-import { LoginForm } from "@/app/components/Organism/LoginForm";
-import { CenterdContainer } from "@/app/components/Templates/CenterdContainer";
+import { CardTitle } from "@/components/atom/CardTitle";
+import { Card } from "@/components/Molecules/Card";
+import { LoginForm } from "@/components/Organism/LoginForm";
+import { CenterdContainer } from "@/components/Templates/CenterdContainer";
 import React from "react";
 
 const page = () => {
