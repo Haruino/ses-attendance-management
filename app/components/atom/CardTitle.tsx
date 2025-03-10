@@ -1,5 +1,14 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
-export const CardTitle = ({ title }: { title: string }) => {
-  return <h2 className="text-center text-3xl font-bold">{title}</h2>;
+export const CardTitle = ({
+  title,
+  className,
+}: {
+  title: string;
+  className?: string;
+}) => {
+  return (
+    <h2 className={cn("text-center text-3xl font-bold", className)}>{title}</h2>
+  );
 };
