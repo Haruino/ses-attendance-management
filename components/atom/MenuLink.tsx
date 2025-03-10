@@ -8,7 +8,7 @@ type LinkProps = {
   className?: string;
 };
 
-const Link = ({ menu, href, className }: LinkProps) => {
+const MenuLink = ({ menu, href, className }: LinkProps) => {
   return (
     <li>
       <a
@@ -24,4 +24,4 @@ const Link = ({ menu, href, className }: LinkProps) => {
   );
 };
 
-export default Link;
+export default MenuLink;

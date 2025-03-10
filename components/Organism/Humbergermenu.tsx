@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "../atom/Link";
+import Link from "../atom/MenuLink";
 
 const Humbergermenu = () => {
   const [isOpen, setIsOpen] = useState(false);

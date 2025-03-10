@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/Organism/Header";
+import Header from "../components/Organism/Header";
 
 export const metadata: Metadata = {
   title: "SES勤怠管理アプリ（仮）",
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className="bg-gray-300 min-h-screen flex flex-col">
         <Header />
         {children}
