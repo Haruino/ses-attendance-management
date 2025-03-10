@@ -6,7 +6,7 @@ import Link from "../atom/MenuLink"
 const Humbergermenu = () => {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
-  const MenuList = [
+  const menuList = [
     {
       menu: "マイページ",
       href: "#",
@@ -49,7 +49,7 @@ const Humbergermenu = () => {
         <div className="absolute right-0 mt-4 bg-white shadow-lg  w-48 p-2">
           <h3 className="text-gray-700 font-semibold border-b pb-2 pl-4">テスト太郎</h3>
           <ul className="mt-2 space-y-2">
-            {MenuList.map((item) => (
+            {menuList.map((item) => (
               <Link
                 key={item.menu}
                 href={item.href}
