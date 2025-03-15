@@ -13,25 +13,23 @@ import {
   type FieldValues,
 } from "react-hook-form"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/tailwindUtils"
 import { Label } from "@/components/ui/label"
 
 const Form = FormProvider
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
   name: TName
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue
-)
+const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue)
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   ...props
 }: ControllerProps<TFieldValues, TName>) => {
@@ -69,28 +67,19 @@ type FormItemContextValue = {
   id: string
 }
 
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue
-)
+const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
 
 function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   const id = React.useId()
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div
-        data-slot="form-item"
-        className={cn("grid gap-2", className)}
-        {...props}
-      />
+      <div data-slot="form-item" className={cn("grid gap-2", className)} {...props} />
     </FormItemContext.Provider>
   )
 }
 
-function FormLabel({
-  className,
-  ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+function FormLabel({ className, ...props }: React.ComponentProps<typeof LabelPrimitive.Root>) {
   const { error, formItemId } = useFormField()
 
   return (
@@ -111,11 +100,7 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
     <Slot
       data-slot="form-control"
       id={formItemId}
-      aria-describedby={
-        !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
-      }
+      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
       aria-invalid={!!error}
       {...props}
     />
@@ -155,13 +140,4 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
   )
 }
 
-export {
-  useFormField,
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-  FormField,
-}
+export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField }

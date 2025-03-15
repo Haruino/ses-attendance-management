@@ -1,4 +1,4 @@
-import { cn } from "@/app/util/tialwindUtil";
+import { cn } from "@/lib/tailwindUtils";
 import React from "react";
 
 type CenterdCardProps = {
