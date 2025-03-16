@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { cn } from "@/app/util/tialwindUtil";
+import { cn } from "@/lib/tailwindUtils";
 
 type LinkProps = {
   menu: string;
